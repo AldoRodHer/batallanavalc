@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 #include "texto.h"
-#include "jugador.h"
+#include "utils.h"
 
 int DIM = 10;
 char barcos[4][13] = {
@@ -20,6 +21,7 @@ void main(){
 	//- EMPIEZA EL JUEGO, EL PRIMER TURNO LE PERTENECE AL JUGADOR, LUEGO LA MAQUINA Y SUCESIVAMENTE HASTA QUE UNO GANE EL PARTIDO
 	//OPCION 2: INSTRUCCIONES
 	//OPCION 3: SALIR
+  srand(time(NULL));
 	system("cls");
 	int opcion = 0;
 	mostrarPresentacion();
@@ -30,7 +32,8 @@ void main(){
 				char **tabJugador, **tabMaquina;
 				tabJugador = inicializarTablero();
 				tabMaquina = inicializarTablero();
-				colocarBarcosJugador(tabJugador);
+				colocarBarcos(tabJugador, 1);
+        colocarBarcos(tabMaquina, 0);
 				break;
 			case 2:
 				mostrarInstrucciones();

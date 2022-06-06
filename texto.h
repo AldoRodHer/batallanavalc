@@ -17,10 +17,10 @@ void mostrarPresentacion(){
 	printf("oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo\n");
 	printf("ooooooooooooo   oooooo  oooooooo ooooo  oooooooo  ooooo   ooooooo  ooooooooooooooooooooooo\n");
 	printf("ooooooooooooo    ooooo  ooooooo   ooooo  oooooo  ooooo     oooooo  ooooooooooooooooooooooo\n");
-	printf("ooooooooooooo  oo oooo  oooooo  o  ooooo  ooooo  ooooo  o   ooooo  ooooooooooooooooooooooo\n");
+	printf("ooooooooooooo  o  oooo  oooooo  o  ooooo  ooooo  ooooo  o   ooooo  ooooooooooooooooooooooo\n");
 	printf("ooooooooooooo  oo  ooo  ooooo  ooo  oooo   ooo  ooooo  ooo  ooooo  ooooooooooooooooooooooo\n");
 	printf("ooooooooooooo  ooo  oo  oooo  ooooo ooooo   o  ooooo  ooooo  oooo  ooooooooooooooooooooooo\n");
-	printf("ooooooooooooo  oooo     ooo          ooooo  o  ooooo          ooo  ooooooooooooooooooooooo\n");
+	printf("ooooooooooooo  oooo  o  ooo          ooooo  o  ooooo          ooo  ooooooooooooooooooooooo\n");
 	printf("ooooooooooooo  ooooo    oo   ooooooo  ooooo   ooooo  ooooooo  ooo         oooooooooooooooo\n");
 	printf("oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo\n");
 	printf("\n\n");
