@@ -156,5 +156,19 @@ void imprimirTableros(char **tablero1, char **tablero2){
   }
 }
 
-// void ataqueJugador(){
-// }
+int *ataqueJugador(char *ataque, char **tableroAtaque, char **tableroMaquina, int restantes){
+  int indiceI = ataque[1] - 48, indiceJ = ataque[0] - 65, *resultado;
+  resultado = (int *)malloc(2*sizeof(int *));
+  resultado[0] = 1;
+  resultado[1] = restantes;
+  if(tableroAtaque[indiceI][indiceJ] != '-'){
+    return resultado;
+  }else if(tableroMaquina[indiceI][indiceJ] == '1'){
+    tableroAtaque[indiceI][indiceJ] = '*';
+    resultado[1] --;
+  }else{
+    tableroAtaque[indiceI][indiceJ] = ' ';
+  }
+  resultado[0] = 0;
+  return resultado;
+}

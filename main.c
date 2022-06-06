@@ -23,13 +23,14 @@ void main(){
 	//OPCION 3: SALIR
   srand(time(NULL));
 	system("cls");
-	int opcion = 0, turno = 1, ganador = 0;
+	int opcion = 0;
 	mostrarPresentacion();
 	while(opcion != 3){
 		opcion = mostrarMenu();
 		switch(opcion){
 			case 1:
-				char **tabJugador, **tabMaquina, **tabAtaqueJ;
+				char **tabJugador, **tabMaquina, **tabAtaqueJ, ataque[2];
+        int turno = 1, ganador = 0, restJugador = 14, restMaquina = 14, *res;
 				tabJugador = inicializarTablero();
 				tabMaquina = inicializarTablero();
         tabAtaqueJ = inicializarTablero();
@@ -40,11 +41,24 @@ void main(){
             system("cls");
             printf("*****TABLERO DE TUS BARCOS*****\t\t******TU TABLERO DE ATAQUE*****\n");
             imprimirTableros(tabJugador, tabAtaqueJ);
-            turno = 0;
+            printf("POSICIONES RESTANTES DEL OPONENTE: %d\n", restMaquina);
+            printf("ES TU TURNO DE ATACAR:");
+            scanf("%s", &ataque);
+            res = ataqueJugador(ataque, tabAtaqueJ, tabMaquina, restMaquina);
+            turno = res[0];
+            restMaquina = res[1];
+            if(turno){
+              printf("Ya ha atacado esa posicion, escoja otra, presione enter para continuar...");
+              wait();
+            }else if(restMaquina == 0){
+              ganador = 1;
+            }
           }else{
+            //TODO: Implementar el ataque de la maquina
             turno = 1;
           }
-        }while(ganador != 0);//TODO: Cambiar por == cuando se termine de hacer el debug
+        }while(ganador == 0);//TODO: Cambiar por == cuando se termine de hacer el debug
+        //TODO: Implementar la parte del ganador
 				break;
 			case 2:
 				mostrarInstrucciones();
