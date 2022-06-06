@@ -172,3 +172,20 @@ int *ataqueJugador(char *ataque, char **tableroAtaque, char **tableroMaquina, in
   resultado[0] = 0;
   return resultado;
 }
+
+int *ataqueMaquina(char **tabJugador, int restantes){
+  int ataque[2] = {rand()%10,rand()%10}, *resultado;
+  resultado = (int *)malloc(2*sizeof(int *));
+  resultado[0] = 0;
+  resultado[1] = restantes;
+  if(tabJugador[ataque[0]][ataque[1]] != '1' && tabJugador[ataque[0]][ataque[1]] != '-'){
+    return resultado;
+  }else if(tabJugador[ataque[0]][ataque[1]] == '1'){
+    tabJugador[ataque[0]][ataque[1]] = '*';
+    resultado[1] --;
+  }else{
+    tabJugador[ataque[0]][ataque[1]] = ' ';
+  }
+  resultado[0] = 1;
+  return resultado;
+}

@@ -54,11 +54,22 @@ void main(){
               ganador = 1;
             }
           }else{
-            //TODO: Implementar el ataque de la maquina
-            turno = 1;
+            res = ataqueMaquina(tabJugador, restJugador);
+            turno = res[0];
+            restJugador = res[1];
+            if(restJugador == 0){
+              ganador = 2;
+            }
           }
         }while(ganador == 0);//TODO: Cambiar por == cuando se termine de hacer el debug
-        //TODO: Implementar la parte del ganador
+        system("cls");
+        if(ganador){
+          printf("FELICIDADES, HAS GANADO! :D");
+        }else{
+          printf("PERDISTE! >:P");
+        }
+        printf("Presione enter para volver al menu...");
+        wait();
 				break;
 			case 2:
 				mostrarInstrucciones();
