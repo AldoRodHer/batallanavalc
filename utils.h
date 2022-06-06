@@ -3,6 +3,8 @@ extern char barcos[4][13];
 extern int casillas[4];
 
 void posicionarBarco();
+void imprimirTablero();
+void imprimirTableros();
 
 char **inicializarTablero(){
 	char **tablero;
@@ -59,14 +61,7 @@ void colocarBarcos(char **tablero, int jugador){
   if(jugador){
   	system("cls");
   	printf("********TABLERO  ACTUAL********\n");
-  	printf("   A  B  C  D  E  F  G  H  I  J\n");
-  	for (int i=0;i<DIM;i++){
-  		printf(" %d ",i);
-  		for (int j=0;j<DIM;j++){
-  			printf("%c  ", tablero[i][j]);
-  		}
-  		printf("\n\n");
-  	}
+  	imprimirTablero(tablero);
   	printf("\nTODOS LOS BARCOS POSICIONADOS\n");
   	printf("Presione enter para continuar...");
   	wait();
@@ -74,14 +69,7 @@ void colocarBarcos(char **tablero, int jugador){
   }else{
     system("cls");
     printf("********TABLERO  ACTUAL********\n");
-    printf("   A  B  C  D  E  F  G  H  I  J\n");
-    for (int i=0;i<DIM;i++){
-      printf(" %d ",i);
-      for (int j=0;j<DIM;j++){
-        printf("%c  ", tablero[i][j]);
-      }
-      printf("\n\n");
-    }
+    imprimirTablero(tablero);
     printf("\nTODOS LOS BARCOS DE LA MAQUINA POSICIONADOS\n");
     printf("Presione enter para continuar...");
     getchar();
@@ -141,3 +129,32 @@ void posicionarBarco(char *pos, int barco, char **tablero, int jugador){
 		}
 	}
 }
+
+void imprimirTablero(char **tablero){
+  printf("   A  B  C  D  E  F  G  H  I  J\n");
+  for (int i=0;i<DIM;i++){
+    printf(" %d ",i);
+    for (int j=0;j<DIM;j++){
+      printf("%c  ", tablero[i][j]);
+    }
+    printf("\n\n");
+  }
+}
+
+void imprimirTableros(char **tablero1, char **tablero2){
+  printf("   A  B  C  D  E  F  G  H  I  J\t\t   A  B  C  D  E  F  G  H  I  J\n");
+  for (int i=0;i<DIM;i++){
+    printf(" %d ",i);
+    for (int j=0;j<DIM;j++){
+      printf("%c  ", tablero1[i][j]);
+    }
+    printf("\t %d ",i);
+    for (int j=0;j<DIM;j++){
+      printf("%c  ", tablero2[i][j]);
+    }
+    printf("\n\n");
+  }
+}
+
+// void ataqueJugador(){
+// }

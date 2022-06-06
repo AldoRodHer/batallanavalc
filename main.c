@@ -23,17 +23,28 @@ void main(){
 	//OPCION 3: SALIR
   srand(time(NULL));
 	system("cls");
-	int opcion = 0;
+	int opcion = 0, turno = 1, ganador = 0;
 	mostrarPresentacion();
 	while(opcion != 3){
 		opcion = mostrarMenu();
 		switch(opcion){
 			case 1:
-				char **tabJugador, **tabMaquina;
+				char **tabJugador, **tabMaquina, **tabAtaqueJ;
 				tabJugador = inicializarTablero();
 				tabMaquina = inicializarTablero();
+        tabAtaqueJ = inicializarTablero();
 				colocarBarcos(tabJugador, 1);
         colocarBarcos(tabMaquina, 0);
+        do{
+          if(turno){
+            system("cls");
+            printf("*****TABLERO DE TUS BARCOS*****\t\t******TU TABLERO DE ATAQUE*****\n");
+            imprimirTableros(tabJugador, tabAtaqueJ);
+            turno = 0;
+          }else{
+            turno = 1;
+          }
+        }while(ganador != 0);//TODO: Cambiar por == cuando se termine de hacer el debug
 				break;
 			case 2:
 				mostrarInstrucciones();
