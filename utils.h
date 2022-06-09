@@ -26,14 +26,7 @@ void colocarBarcos(char **tablero, int jugador){
     if(jugador){
       system("cls");
       printf("********TABLERO  ACTUAL********\n");
-      printf("   A  B  C  D  E  F  G  H  I  J\n");
-      for (int i=0;i<DIM;i++){
-        printf(" %d ",i);
-        for (int j=0;j<DIM;j++){
-          printf("%c  ", tablero[i][j]);
-        }
-        printf("\n\n");
-      }
+      imprimirTablero(tablero);
       printf("\nPOR FAVOR ELIGA LA POSICION DEL BARCO: %s (%d casillas)\n", barcos[barco], casillas[barco]);
       scanf("%s",&posicion);
     }else{
@@ -66,14 +59,6 @@ void colocarBarcos(char **tablero, int jugador){
   	printf("Presione enter para continuar...");
   	wait();
   	system("cls");
-  }else{
-    system("cls");
-    printf("********TABLERO  ACTUAL********\n");
-    imprimirTablero(tablero);
-    printf("\nTODOS LOS BARCOS DE LA MAQUINA POSICIONADOS\n");
-    printf("Presione enter para continuar...");
-    getchar();
-    system("cls");
   }
 }
 
@@ -189,3 +174,9 @@ int *ataqueMaquina(char **tabJugador, int restantes){
   resultado[0] = 1;
   return resultado;
 }
+
+// int *ataqueMaquinaInt(char **tabJugador, int restantes){
+//   int *resultado, ataques[100], posI[100], posJ[100];
+//   resultado = (int *)malloc(2*sizeof(int *));
+//   return resultado;
+// }

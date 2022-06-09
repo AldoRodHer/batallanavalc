@@ -61,7 +61,7 @@ void main(){
               ganador = 2;
             }
           }
-        }while(ganador == 0);//TODO: Cambiar por == cuando se termine de hacer el debug
+        }while(ganador == 0);
         system("cls");
         if(ganador){
           printf("FELICIDADES, HAS GANADO! :D");
